@@ -1,5 +1,5 @@
 <?php
-
+include_once('library/PDOFactory.php');
 $pdo = PDOFactory::getMysqlConnection();
 
 if (isset($_REQUEST['p'])) {
@@ -17,3 +17,5 @@ switch($page){
 		$vue = 'views/accueil.php';
 
 }
+
+include_once('layouts/layout.php');
