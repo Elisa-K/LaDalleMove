@@ -178,7 +178,7 @@ a:hover{
     width: 125px;
 }
 .dialog-sport a {
-    width: 145px;
+    width: 155px;
     white-space: nowrap;
 }
 #modal-help-carte .oblique-top{
@@ -189,7 +189,7 @@ a:hover{
 .dialog-sport .oblique-top{
     background: linear-gradient(to left top, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
     height: 5px;
-    width: 145px;
+    width: 155px;
 }
 #modal-help-carte .oblique-bottom{
     background: linear-gradient(to right bottom, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
@@ -199,7 +199,7 @@ a:hover{
 .dialog-sport .oblique-bottom{
     background: linear-gradient(to right bottom, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
     height: 5px;
-    width: 145px;
+    width: 155px;
 }
 
 .dialog-sport .modal-content{
@@ -207,10 +207,13 @@ a:hover{
     margin: auto;
 }
 .dialog-sport a img {
-    height: 50px;
+    height: 22px;
 }
 .defi img{
     height: 50px;
+}
+.defi a >img{
+    height: 25px;
 }
 .defi a {
     font-size: 20px;

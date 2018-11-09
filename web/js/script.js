@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    // $('#modal-help-carte').modal('show');
+    $('#modal-help-carte').modal('show');
 })

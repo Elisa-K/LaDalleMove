@@ -48,7 +48,15 @@ switch($page){
 		$listSport = getAllSport();
 		$vue = 'views/carte.php';
 	break;
+	case 'sportTeste':
+		$retour = sportTeste($_GET['sportId']);
+		$listSport = getAllSport();
+		$modalHelp = false;
+		$vue = 'views/carte.php';
+		break;
 	case 'resultat':
+		$score = getScore();
+		$profil = getProfilScore($score);
 		$vue = 'views/resultat.php';
 		break;
 	default:

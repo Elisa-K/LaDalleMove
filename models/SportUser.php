@@ -29,17 +29,18 @@ class SportUser {
 
 	public function getSportUser($idUser, $idSport){
 		try{
-			$req = $this->connect->prepare("SELECT id_user, id_sport, vote FROM sport_user WHERE id_user = :idUser AND id_sport = :idSport)");
+			$req = $this->connect->prepare("SELECT id_user, id_sport, vote FROM sport_user WHERE id_user = :idUser AND id_sport = :idSport");
 			$req->bindParam( ":idUser",$idUser, PDO::PARAM_INT);
 			$req->bindParam( ":idSport",$idSport, PDO::PARAM_INT);
-			$obj = $req->execute();
+			$req->execute();
+			$obj = $req->fetch();
 			if(empty($obj)){
 				return true;
 			}else {
 				return false;
 			}
 		}catch (PDOException $e){
-			return false;
+			return $e->getMessage();
 		}
 	}
 //COMPTER SCORE PAR USER
