@@ -22,7 +22,7 @@ class SportUser {
 			$retour = true;
 			return $retour;
 		}catch (PDOException $e){
-			return null;
+			return false;
 		}
 
 	}

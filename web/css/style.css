@@ -1,29 +1,62 @@
 @font-face {
     font-family: "Circe Bold";
-    src: url("web/font/CRC65.OTF");
+    src: url("../font/CRC65.OTF");
 }
 @font-face {
     font-family: "Circe Extra Light";
-    src: url("web/font/CRC25.OTF");
+    src: url("../font/CRC25.OTF");
 }
 @font-face {
     font-family: "Circe";
-    src: url("web/font/CRC55.OTF");
+    src: url("../font/CRC55.OTF");
 }
 @font-face {
     font-family: "Circe Light";
-    src: url("web/font/CRC35.OTF");
+    src: url("../font/CRC35.OTF");
 }
 
 
+html{
+    height: 100%;
+    width: 100%;
+}
 
+.bg-bleu{
+    background: linear-gradient(0deg, #00C4FF, #74DBFB);
+}
 body {
     margin: 0;
-    min-height: 100%;
-    background: linear-gradient(0deg, #00C4FF, #74DBFB);
-    font-family: "Circe";
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    font-family: "Circe" !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
+.accueil-header{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    padding-bottom: 105px;
+    max-height: 100%;
+    position: relative;
+    overflow-y: hidden ;
+}
+.accueil-header h1{
+    font-family: "Circe Bold" !important;
+    white-space: nowrap;
+}
+.accueil-header h2{
+    font-family: "Circe" !important;
+    white-space: nowrap;
+}
+
+.accueil-header h2{
+    margin-bottom: 0px;
+}
 #carte{
     position: relative;
 }
@@ -50,7 +83,10 @@ input[type="radio"]:checked+label{
 
 .button-orange {
     background-color: #F7A500;
-    height: 80px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 p.text-button {
@@ -60,7 +96,7 @@ p.text-button {
 
 div.oblique {
     background: linear-gradient(to left top, #F7A500 49%, #00C4FF 50%), linear-gradient(-50deg, #00C4FF 16px, #000 0);
-    height: 7px;
+    height: 15px;
 
 }
 
@@ -70,10 +106,120 @@ h1.TitreLaDalleMove {
 
 p.TexteDescriptifAccueil {
     color: white;
-    font-family: "Circe";
+    font-family: "Circe" !important;
 }
 
+.img-home{
+    height: auto;
+}
 
+.oblique-carte{
+    background: linear-gradient(to left top, #00C4FF 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 15px;
+}
+.button-bleu{
+    background-color: #00C4FF;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-bleu img{
+    height: 38px;
+
+}
+
+.button-bleu p{
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.button-orange img{
+    height: 25px;
+    margin-left: 15px;
+}
+
+.button-orange p{
+    line-height: normal;
+    margin-top: 10px;
+}
+a:hover{
+    text-decoration: none !important;
+}
+
+#carte{
+    height: 100vh;
+    background-image: url("../images/CARTE_FINAL-01.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: 92vh 100vh;
+    background-position-y: -47px;
+}
+
+.modal{
+    font-family: "Circe" !important;
+}
+
+.modal p{
+    font-size: 15px;
+}
+
+.modal-title{
+    font-size: 2rem;
+}
+
+#modal-help-carte a p{
+    font-size: 20px;
+    font-family: "Circe Bold" !important;
+}
+
+#modal-help-carte a{
+    width: 125px;
+}
+.dialog-sport a {
+    width: 145px;
+    white-space: nowrap;
+}
+#modal-help-carte .oblique-top{
+    background: linear-gradient(to left top, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 5px;
+    width: 125px;
+}
+.dialog-sport .oblique-top{
+    background: linear-gradient(to left top, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 5px;
+    width: 145px;
+}
+#modal-help-carte .oblique-bottom{
+    background: linear-gradient(to right bottom, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 5px;
+    width: 125px;
+}
+.dialog-sport .oblique-bottom{
+    background: linear-gradient(to right bottom, #fff 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 5px;
+    width: 145px;
+}
+
+.dialog-sport .modal-content{
+    width: 85%;
+    margin: auto;
+}
+.dialog-sport a img {
+    height: 50px;
+}
+.defi img{
+    height: 50px;
+}
+.defi a {
+    font-size: 20px;
+
+}
+
+.dialog-sport a p {
+    font-size: 20px;
+}
 /*skew-cc {*/
 
     /*width: 100%;*/
