@@ -1,6 +1,6 @@
 <div class="container-fluid bg-orange">
 	<div class="row">
-		<div class="col-12 p-0">
+		<div class="col-12 p-0"  style="height:100vh;">
 			<p class="text-center mt-3 texte-blanc">Pour partager tes réactions, tes photos et défier tes amis utilise les</p>
             <div>
                 <div class="oblique-ecran-hashtag">

@@ -37,3 +37,8 @@ function stopParcours(){
 	return $retour;
 }
 
+function getUserById(){
+	$user = new User();
+	$userLogin = $user->getUserById($_SESSION['id']);
+	return $userLogin;
+}

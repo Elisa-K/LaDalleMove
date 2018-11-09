@@ -27,7 +27,9 @@ switch($page){
 	case 'signIn':
 		$retour = addUser();
 		if(!$retour) $vue = 'views/inscription.php';
-		else $vue = 'views/ecran.php';
+		else {
+			$vue = 'views/ecran.php';
+		}
 	break;
 	case 'connexion':
 		$vue = 'views/connexion.php';
@@ -37,8 +39,9 @@ switch($page){
 		if(empty($retour)){
 			$vue = 'views/connexion.php';
 		}else{
+			$listSport = getAllSport();
 			$_SESSION["id"] = $retour->getId();
-			$vue = 'views/ecran.php';
+			$vue = 'views/carte.php';
 		}
 	break;
 	case 'ecran':
@@ -57,6 +60,7 @@ switch($page){
 	case 'resultat':
 		$score = getScore();
 		$profil = getProfilScore($score);
+		$user = getUserById();
 		$vue = 'views/resultat.php';
 		break;
 	default:

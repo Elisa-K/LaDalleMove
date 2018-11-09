@@ -6,19 +6,16 @@
             <img src="" alt="">
 
             <div>
-                <p class="texte-blanc text-center">Félicitations @Pseudo</p>
-                <p class="texte-blanc text-center">Tu es un</p>
+                <h4 class="text-white text-center">Félicitations <?php echo $user->getPseudo();?></h4>
+                <h5 class="text-white text-center">Tu es un </h5>
                 <img src="web/Images/coupe.svg" alt="" style="width: 17%;" class="mx-auto d-block">
                 <div>
                     <div class="oblique-ecran-hashtag" style="margin-top: -25px;">
                     </div>
                     <div class="button-black-resultat text-center">
                         <br>
-                        <p class="texte-blanc">Dalleux furieux
-                        dezdzedzedezdzedjzejhdzehdhzeidzehd
-                        fgfezfzefzefzefzefzefzefzefzef
-                        zefzefzefeezfezfezfzefzefzefzefzefzefzefzefze
-                        fzefzefzefzefzefzefzeffeezfzefzef
+                        <h3 class="text-white"><?php echo $profil->getName();?></h3>
+                        <p class="texte-blanc"><?php echo $profil->getDescript(); ?></p>
                     </div>
                     <div class="oblique-ecran-hashtag-bas">
                     </div>
@@ -38,7 +35,7 @@
                     </a>
                     <div class="oblique-resultat-classement">
                     </div>
-                    <a href="index.php?p=classement" class="">
+                    <a href="" class="">
                         <div class="button-bleu-resultat text-center">
                             <p class="text-button-resultat" style="font-size: 27px;"><strong>Classement</strong> &nbsp;
                                 <img src="web/Images/classement.svg" alt="" style="width: 10%;"></p>

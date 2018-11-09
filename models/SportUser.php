@@ -46,14 +46,17 @@ class SportUser {
 //COMPTER SCORE PAR USER
 	public function getScore($idUser){
 		try{
-			$req = $this->connect->prepare("SELECT id_user, COUNT(id_sport) as score FROM sport_user WHERE id_user = :idUser");
+			$req = $this->connect->prepare("SELECT id_user, id_sport FROM sport_user WHERE id_user = :idUser");
 			$req->bindParam( ":idUser",$idUser, PDO::PARAM_INT);
-			$req->bindParam( ":idSport",$idSport, PDO::PARAM_INT);
 
-			return true;
+
+			$req->execute();
+
+			$score = $req->rowCount();
+			return $score;
 
 		}catch (PDOException $e){
-			return false;
+			return $e->getMessage();
 		}
 	}
 

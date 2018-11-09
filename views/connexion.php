@@ -1,7 +1,7 @@
 <div class="container-fluid pt-4 bg-rouge">
     <div class="row">
         <div class="col-12">
-            <div class="">
+            <div class="" style="height:100vh;">
                 <img src="web/Images/illistration_page_connexion.svg" alt="">
                 <h1 class="text-center TitreLaDalleMove" style="color: white"><strong>Connexion</strong></h1>
                 <form action="index.php?p=signUp" method="POST">

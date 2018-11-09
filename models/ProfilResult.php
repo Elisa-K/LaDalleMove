@@ -16,8 +16,8 @@ class ProfilResult {
 
 	public function getProfilResult($score){
 		try{
-			$req = $this->connect->prepare("SELECT id, name, descript FROM profil_result WHERE :score BETWEEN score_min AND score_max");
-			$req ->bindParam( ":score", $score, PDO::PARAM_INT);
+			$req = $this->connect->prepare("SELECT id, name, descript FROM profil_result WHERE :score >= score_min AND :score <= score_max");
+			$req->bindParam( ":score", $score, PDO::PARAM_INT);
 			$req->execute();
 			$req->setFetchMode( PDO::FETCH_OBJ);
 			$obj = $req->fetch();

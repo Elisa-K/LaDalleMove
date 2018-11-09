@@ -133,9 +133,11 @@ input[type="radio"]:checked+label{
 }
 .button-black-resultat {
     background-color: #000000;
-    height: 150px;
+    height: 182px;
 }
-
+.button-black-resultat h3{
+    font-family: "Circe Bold" !important;
+}
 p.text-button {
     line-height: 80px;
     color: white;
