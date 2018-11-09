@@ -8,8 +8,9 @@ function addUser(){
 
 	$user = new User();
 	$user->setPseudo($_POST['pseudo']);
+	$user->setPassword($_POST['password']);
 	$user->setIdAvatar($_POST['idAvatar']);
-	$verifLogin = $user->verifPseudo( $_POST['pseudo']);
+	$verifLogin = $user->verifPseudo($_POST['pseudo']);
 	if($verifLogin){
 		$retour = $user->addUser();
 	}else{

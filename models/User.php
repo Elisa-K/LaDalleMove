@@ -40,7 +40,7 @@ class User {
 			$req->setFetchMode(PDO::FETCH_OBJ);
 			$obj = $req->fetch();
 			if(empty($obj)){
-				return null;
+				return false;
 			}else{
 				if (password_verify($password, $obj->password)) {
 					$user = new User();
@@ -48,14 +48,14 @@ class User {
 					$user->setPseudo($obj->pseudo);
 					$user->setPassword($obj->password);
 					$user->setStopDay($obj->stopDay);
-					$user->setIdAvatar($obj->idAvatar);
+					$user->setIdAvatar($obj->id_avatar);
 					return $user;
 				} else {
-					return null;
+					return false;
 				}
 			}
 		}catch(PDOException $e){
-			return null;
+			return false;
 		}
 
 	}
@@ -63,8 +63,8 @@ class User {
 
 	public function verifPseudo($pseudo){
 		try{
-			$req = $this->connect->prepare("SELECT pseudo FROM user wher pseudo = :pseudo");
-			$req->bindParam( ":pseudo",$this->lastName, PDO::PARAM_STR);
+			$req = $this->connect->prepare("SELECT pseudo FROM user where pseudo = :pseudo");
+			$req->bindParam( ":pseudo",$pseudo, PDO::PARAM_STR);
 
 			$req->execute();
 			$obj = $req->fetch();
@@ -75,18 +75,17 @@ class User {
 			}
 
 		}catch (PDOException $e){
-			return false;
+			return $e->getMessage();
 		}
 	}
 	//Inscription
 	public function addUser(){
 		try{
 			$req = $this->connect->prepare("INSERT INTO user(pseudo, password, id_avatar, stopDay) VALUES (:pseudo, :password, :idAvatar, 0)");
-			$req->bindParam( ":pseudo",$this->lastName, PDO::PARAM_STR);
-
+			$req->bindParam( ":pseudo",$this->pseudo, PDO::PARAM_STR);
 			$options = [
-				'cost' => 11,
-				'salt' => random_bytes(22)
+				'cost' => 11
+
 			];
 			$password = password_hash($this->password, PASSWORD_BCRYPT, $options);
 
@@ -96,7 +95,7 @@ class User {
 			$retour = true;
 			return $retour;
 		}catch (PDOException $e){
-			return null;
+			return $e->getMessage();
 		}
 	}
 
@@ -113,7 +112,7 @@ class User {
 				$user = new User();
 				$user->setId( $obj->id );
 				$user->setPseudo( $obj->pseudo );
-				$user->setIdAvatar( $obj->idAvatar );
+				$user->setIdAvatar( $obj->id_avatar );
 
 
 				return $user;

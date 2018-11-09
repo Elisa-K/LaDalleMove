@@ -45,10 +45,9 @@ class Sport {
 
 	public function getAllSport(){
 		try{
-			$req = $this->connect->prepare( "SELECT id, name, image, coordonnees, descript, stand FROM sport where id = :id");
-			$req->bindParam( ":id", $this->id, PDO::PARAM_INT);
+			$req = $this->connect->prepare( "SELECT id, name, image, coordonnees, descript, stand FROM sport");
 			$req->setFetchMode( PDO::FETCH_OBJ);
-
+			$req->execute();
 			$listSport = array();
 			while($obj = $req->fetch()){
 				$sport = new Sport();
