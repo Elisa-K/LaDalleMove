@@ -1,23 +1,30 @@
-<div class="container">
-	<div class="row mb-3">
-		<div class="col-12">
+<div class="container-fluid bg-orange">
+	<div class="row">
+		<div class="col-12 p-0">
+			<p class="text-center mt-3 texte-blanc">Pour partager tes réactions, tes photos et défier tes amis utilise les</p>
+            <div>
+                <div class="oblique-ecran-hashtag">
+                </div>
+                    <div class="button-black text-center">
+                        <p class="texte-blanc">#LaDalleMoove <br>
+                        #LaDalleAngevine <br>
+                        #ToutAngersBouge</p>
+                    </div>
+                <div class="oblique-ecran-hashtag-bas">
+                </div>
+            </div>
 
-			<h1 class="text-center">Passez à la télé</h1>
-			<p class="text-center">Texte ici</p>
-			<img src="https://via.placeholder.com/150" alt="" class="text-center">
-		</div>
+			<img src="https://via.placeholder.com/150" alt="" class="text-center mx-auto d-block mt-3">
+            <p class="text-center mt-3 texte-blanc">Ils s'afficheront sur l'écran géant situé sur l'esplanade du Quai.</p>
+        </div>
 	</div>
-    <div class="row align-items-center">
-        <div class="col-6">
-            <p>#LaDalleAngevine</p>
-            <p>#ToutAngersBouge</p>
-            <p>#LaDalleMove</p>
+    <div class="fixed-bottom">
+        <div class="oblique-ecran-jeu">
         </div>
-        <div class="col-6">
-            <img src="web/Images/Dalle-Angevine.jpg" alt="" class="" style="width: 125px; height: 125px;">
-        </div>
-    </div>
-    <div class="row">
-        <a href="index.php?p=carte" class="btn btn-primary btl-lg btn-block">Aller au parcours</a>
+        <a href="index.php?p=signInUp" class="">
+            <div class="button-bleu text-center">
+                <p class="text-button" style="font-size: 37px;"><strong>Jouer</strong> <img src="web/Images/lecture-bouton-icone-triangle.png" alt="" style="width: 10%"></p>
+            </div>
+        </a>
     </div>
 </div>
