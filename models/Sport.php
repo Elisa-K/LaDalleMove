@@ -32,10 +32,7 @@ class Sport {
 				$sport->setCoordonnees($obj->coordonnees);
 				$sport->setDescript($obj->descript);
 				$sport->setStand($obj->stand);
-
 				return $sport;
-
-
 			}
 		}catch(PDOException $e){
 			return null;
