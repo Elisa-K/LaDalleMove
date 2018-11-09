@@ -1,3 +1,29 @@
+@font-face {
+    font-family: "Circe Bold";
+    src: url("web/font/CRC65.OTF");
+}
+@font-face {
+    font-family: "Circe Extra Light";
+    src: url("web/font/CRC25.OTF");
+}
+@font-face {
+    font-family: "Circe";
+    src: url("web/font/CRC55.OTF");
+}
+@font-face {
+    font-family: "Circe Light";
+    src: url("web/font/CRC35.OTF");
+}
+
+
+
+body {
+    margin: 0;
+    min-height: 100%;
+    background: linear-gradient(0deg, #00C4FF, #74DBFB);
+    font-family: "Circe";
+}
+
 #carte{
     position: relative;
 }
@@ -23,15 +49,30 @@ input[type="radio"]:checked+label{
 }
 
 .button-orange {
-    background-color: orangered;
-    height: 90px;
-    background: linear-gradient(to right bottom, #823A9C 49%, #fff 50%), linear-gradient(-50deg, #ffffff 16px, #000 0);
+    background-color: #F7A500;
+    height: 80px;
 }
 
 p.text-button {
     line-height: 80px;
     color: white;
 }
+
+div.oblique {
+    background: linear-gradient(to left top, #F7A500 49%, #00C4FF 50%), linear-gradient(-50deg, #00C4FF 16px, #000 0);
+    height: 7px;
+
+}
+
+h1.TitreLaDalleMove {
+    font-size: 50px;
+}
+
+p.TexteDescriptifAccueil {
+    color: white;
+    font-family: "Circe";
+}
+
 
 /*skew-cc {*/
 
