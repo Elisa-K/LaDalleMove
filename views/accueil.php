@@ -1,4 +1,4 @@
-<div class="container pt-4">
+<div class="container-fluid pt-4 bg-bleu">
 	<div class="row">
 		<div class="col-12">
             <div class="">
@@ -10,7 +10,7 @@
                 <p class="text-center TexteDescriptifAccueil mt-4" style="font-size: 25px;">Es-tu prêt ?</p>
             </div>
             <div class="fixed-bottom">
-                <div class="oblique">
+                <div class="oblique-accueil">
                 </div>
                 <a href="index.php?p=signInUp" class="">
                     <div class="button-orange text-center">

@@ -15,12 +15,31 @@
     src: url("web/font/CRC35.OTF");
 }
 
+html {
+    height: 100%;
+}
+
+.bg-bleu {
+    background: linear-gradient(0deg, #00C4FF, #74DBFB);
+}
+
+.bg-orange {
+    background: linear-gradient(0deg, #F7A500, #F7C600);
+}
+
+.bg-rouge {
+    background: linear-gradient(0deg, #E62042, #FF395B);
+}
+
+.btn-submit {
+    padding-top: 3%;
+    background-color: #F7A500;
+}
 
 
 body {
     margin: 0;
     min-height: 100%;
-    background: linear-gradient(0deg, #00C4FF, #74DBFB);
     font-family: "Circe";
 }
 
@@ -52,17 +71,99 @@ input[type="radio"]:checked+label{
     background-color: #F7A500;
     height: 80px;
 }
+.button-red {
+    background-color: #E62042;
+    height: 80px;
+}
+
+.button-red-resultat {
+    background-color: #E62042;
+    height: 50px;
+}
+
+.button-bleu-resultat {
+    background-color: #46D2FC;
+    height: 50px;
+}
+
+.button-bleu {
+    background-color: #46D2FC;
+    height: 80px;
+}
+
+.button-black {
+    background-color: #000000;
+    height: 80px;
+}
+.button-black-resultat {
+    background-color: #000000;
+    height: 150px;
+}
 
 p.text-button {
     line-height: 80px;
     color: white;
 }
 
-div.oblique {
+p.text-button-resultat {
+    line-height: 50px;
+    color: white;
+}
+
+div.oblique-accueil{
     background: linear-gradient(to left top, #F7A500 49%, #00C4FF 50%), linear-gradient(-50deg, #00C4FF 16px, #000 0);
     height: 7px;
-
 }
+
+div.oblique-connexion{
+    background: linear-gradient(to left top, #F7A500 49%, #E62042 50%), linear-gradient(-50deg, #E62042 16px, #000 0);
+    height: 7px;
+}
+
+div.oblique-ecran-jeu{
+    background: linear-gradient(to left top, #46D2FC 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 7px;
+}
+
+
+div.oblique-signup-connection {
+      background: linear-gradient(to left top, #F7A500 49%, #52d4fc 50%), linear-gradient(-50deg, #52d4fc 16px, #000 0);
+      height: 7px;
+}
+
+div.oblique-signup-inscription {
+    background: linear-gradient(to left top, #E62042 49%, #f7a500 50%), linear-gradient(-50deg, #f7a500 16px, #000 0);
+    height: 7px;
+}
+
+div.oblique-signup-inscription-bas {
+    background: linear-gradient(to right bottom, #E62042 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 7px;
+}
+
+div.oblique-ecran-hashtag {
+    background: linear-gradient(to left top, #000000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 7px;
+}
+
+div.oblique-ecran-hashtag-bas {
+    background: linear-gradient(to right bottom, #000000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 7px;
+}
+
+div.oblique-resultat-partage {
+    background: linear-gradient(to left top, #E62042 49%, #f7a500 50%), linear-gradient(-50deg, #f7a500 16px, #000 0);
+    height: 7px;
+}
+
+div.oblique-resultat-classement {
+    background: linear-gradient(to left top, #46D2FC 49%, #E62042 50%), linear-gradient(-50deg, #E62042 16px, #000 0);
+    height: 7px;
+}
+
+
+
+
 
 h1.TitreLaDalleMove {
     font-size: 50px;
@@ -71,6 +172,10 @@ h1.TitreLaDalleMove {
 p.TexteDescriptifAccueil {
     color: white;
     font-family: "Circe";
+}
+
+p.texte-blanc {
+    color: white;
 }
 
 
