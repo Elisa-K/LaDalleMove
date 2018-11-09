@@ -1,6 +1,6 @@
 <?php
-include_once('library/PDOFactory.php');
-$pdo = PDOFactory::getMysqlConnection();
+include_once('models/BddConnect.php');
+include_once("controller/UserController.php");
 
 if (isset($_REQUEST['p'])) {
 	$page = $_REQUEST['p'];
@@ -16,7 +16,16 @@ switch($page){
 	case 'inscription':
 		$vue = 'views/inscription.php';
 	break;
+	case 'signIn':
+		$retour = addUser();
+		if(isset($retour) && $retour == 1){
+			header('index.php?p=carte');
+		}else{
+			header('index.php');
+		}
+	break;
 	case 'carte':
+
 		$vue = 'views/carte.php';
 	break;
 	case 'resultat':

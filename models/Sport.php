@@ -1,14 +1,70 @@
 <?php
 
 class Sport {
+	private $connect;
+	protected $id;
+	protected $name;
+	protected $image;
+	protected $coordonnees;
+	protected $descript;
+	protected $stand;
 
-	private $id;
-	private $name;
-	private $image;
-	private $coordonnees;
-	private $descript;
-	private $stand;
 
+	public function __construct()
+	{
+		$db = BddConnect::getInstance();
+		$this->connect = $db->getDbh();
+	}
+
+	public function getSportById($id){
+		try{
+			$req = $this->connect->prepare( "SELECT id, name, image, coordonnees, descript, stand FROM sport where id = :id");
+			$req->bindParam( ":id", $id, PDO::PARAM_INT);
+			$req->setFetchMode( PDO::FETCH_OBJ);
+			$obj = $req->fetch();
+			if(empty($obj)){
+				return null;
+			}else{
+				$sport = new Sport();
+				$sport->setId($obj->id);
+				$sport->setName($obj->name);
+				$sport->setImage($obj->image);
+				$sport->setCoordonnees($obj->coordonnees);
+				$sport->setDescript($obj->descript);
+				$sport->setStand($obj->stand);
+
+				return $sport;
+
+
+			}
+		}catch(PDOException $e){
+			return null;
+		}
+	}
+
+
+	public function getAllSport(){
+		try{
+			$req = $this->connect->prepare( "SELECT id, name, image, coordonnees, descript, stand FROM sport where id = :id");
+			$req->bindParam( ":id", $this->id, PDO::PARAM_INT);
+			$req->setFetchMode( PDO::FETCH_OBJ);
+
+			$listSport = array();
+			while($obj = $req->fetch()){
+				$sport = new Sport();
+				$sport->setId($obj->id);
+				$sport->setName($obj->name);
+				$sport->setImage($obj->image);
+				$sport->setCoordonnees($obj->coordonnees);
+				$sport->setDescript($obj->descript);
+				$sport->setStand($obj->stand);
+				$listSport[] =$sport;
+			}
+			return $listSport;
+		}catch(PDOException $e){
+			return null;
+		}
+	}
 	/**
 	 * @return int
 	 */
