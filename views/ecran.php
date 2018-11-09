@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="row mb-3">
 		<div class="col-12">
+
 			<h1 class="text-center">Passez à la télé</h1>
 			<p class="text-center">Texte ici</p>
 			<img src="https://via.placeholder.com/150" alt="" class="text-center">

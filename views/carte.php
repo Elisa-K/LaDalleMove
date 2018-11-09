@@ -4,6 +4,7 @@
             <div id="carte" class="bg-primary mb-3" style="width:100%; height: 500px;">
                 <span><i class="far fa-question-circle"></i></span>
             </div>
+            <?php var_dump($listSport); ?>
             <a href="index.php?p=resultat" class="btn btn-primary btl-lg btn-block">Arreter mon parcours</a>
         </div>
     </div>

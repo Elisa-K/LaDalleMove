@@ -12,7 +12,7 @@
             <div class="fixed-bottom">
                 <div class="oblique">
                 </div>
-                <a href="index.php?p=inscription" class="">
+                <a href="index.php?p=signInUp" class="">
                     <div class="button-orange text-center">
                         <p class="text-button" style="font-size: 37px;"><strong>Jouer</strong> <img src="web/Images/lecture-bouton-icone-triangle.png" alt="" style="width: 10%"></p>
                     </div>
