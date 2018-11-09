@@ -16,6 +16,9 @@ switch($page){
 	case 'inscription':
 		$vue = 'views/inscription.php';
 	break;
+	case 'ecran':
+		$vue = 'views/ecran.php';
+		break;
 	case 'carte':
 		$vue = 'views/carte.php';
 	break;
