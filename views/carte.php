@@ -20,7 +20,8 @@
             <div class="fixed-bottom">
                 <div class="oblique-carte">
                 </div>
-                <a href="index.php?p=resultat" class="text-white text-decoration-none">
+                <?php if($score < 3) $class='notClick'; else $class='click';?>
+                <a href="index.php?p=resultat" class="text-white text-decoration-none <?php echo $class ?>" >
                     <div class="button-bleu text-center">
                         <p class="text-button" style="font-size: 27px;"><strong>Arrêter mon parcours</strong> <img src="web/Images/fleche.svg" alt=""></p>
                     </div>
@@ -60,6 +61,7 @@
                     </div>
                 </div>
             </div>
+            <div class="modal-oblique-bottom"></div>
         </div>
     </div>
 	<?php
@@ -69,9 +71,12 @@ foreach($listSport as $sport){
 ?>
     <div class="modal " tabindex="-1"  id="modal-sport-<?php echo $sportId?>" role="dialog">
         <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
-            <div class="modal-content">
+
+            <div class="modal-content position-relative">
 
                 <div class="modal-body pt-1 bg-dark ">
+
+                    <div class="modal-oblique-center-top"></div>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -96,8 +101,10 @@ foreach($listSport as $sport){
 
                     <div class="oblique-bottom mx-auto">
                     </div>
+                    <div class="modal-oblique-center-bottom"></div>
                 </div>
             </div>
+
         </div>
     </div>
 <?php }

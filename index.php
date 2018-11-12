@@ -41,6 +41,7 @@ switch($page){
 		}else{
 			$listSport = getAllSport();
 			$_SESSION["id"] = $retour->getId();
+			$score = getScore();
 			$vue = 'views/carte.php';
 		}
 	break;
@@ -48,6 +49,7 @@ switch($page){
 		$vue = 'views/ecran.php';
 		break;
 	case 'carte':
+		$score = getScore();
 		$listSport = getAllSport();
 		$vue = 'views/carte.php';
 	break;
@@ -55,6 +57,7 @@ switch($page){
 		$retour = sportTeste($_GET['sportId']);
 		$listSport = getAllSport();
 		$modalHelp = false;
+		$score = getScore();
 		$vue = 'views/carte.php';
 		break;
 	case 'resultat':

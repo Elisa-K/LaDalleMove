@@ -23,9 +23,9 @@
                 <div class="oblique-signup-inscription-bas">
                 </div>
             </div>
-            
+
             <div class="mt-3">
-                <img src="web/Images/illustration_inscription.svg" alt="">
+                <img  class='animated fadeInLeft delay-0s' src="web/Images/illustration_inscription.svg" alt="">
             </div>
         </div>
     </div>

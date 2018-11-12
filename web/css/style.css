@@ -204,7 +204,7 @@ div.oblique-resultat-classement {
 
 
 h1.TitreLaDalleMove {
-    font-size: 50px;
+    font-size: 37px;
 }
 
 p.TexteDescriptifAccueil {
@@ -310,7 +310,6 @@ a:hover{
 }
 
 .dialog-sport .modal-content{
-    width: 85%;
     margin: auto;
 }
 .dialog-sport a img {
@@ -333,4 +332,45 @@ a:hover{
 
 input[type="radio"]{
     visibility:hidden;
+}
+
+
+.bg-dark{
+    background-color: #000 !important;
+}
+
+.modal-oblique-bottom{
+
+    background: linear-gradient(to right bottom, #000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 10px;
+
+}
+.modal-oblique-center-bottom{
+    position: absolute;
+    bottom:-10px;
+    background: linear-gradient(to right bottom, #000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 10px;
+     width: 100%;
+     left: 0;
+}
+
+.modal-oblique-center-top{
+    position: absolute;
+    top:-10px;
+    background: linear-gradient(to left top, #000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 10px;
+    width: 100%;
+    left: 0;
+
+}
+
+
+.modal-content{
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.notClick{
+    pointer-events: none;
+    cursor: default;
 }

@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-12">
             <div class="" style="height:100vh;">
-                <img src="web/Images/illistration_page_connexion.svg" alt="">
+                <img src="web/Images/illistration_page_connexion.svg" alt="" class='animated fadeInLeft delay-0s'>
                 <h1 class="text-center TitreLaDalleMove" style="color: white"><strong>Connexion</strong></h1>
                 <form action="index.php?p=signUp" method="POST">
 		            <?php if(isset($retour) && !$retour){ ?>
-                        <p>Pseudo et/ou mot de passe invalide(s)</p>
+                        <p class='font-weight-bold text-white'>Pseudo et/ou mot de passe invalide(s)</p>
 		            <?php } ?>
                     <div class="form-group text-center">
                         <label for="" style="color: white">Pseudo de Dalleux :</label>
