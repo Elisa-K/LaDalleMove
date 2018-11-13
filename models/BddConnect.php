@@ -6,7 +6,7 @@ class BddConnect
 	private $host = "localhost";
 	private $dbname = "ladallemove";
 	private $username = "root";
-	private $password = '';
+	private $password = 'root';
 	private $dbh;
 	private function __construct()
 	{

@@ -64,9 +64,10 @@ class SportUser {
 
 	public function sendVoteSport($idUser, $idSport, $vote){
 		try{
-			$req = $this->connect->prepare("UPDATE sport_user SET vote = : vote WHERE id_user = :idUser, id_sport = :idSport");
-			$req->bindParam( ":idUser",$idUser, PDO::PARAM_INT);
-			$req->bindParam( ":idSport",$idSport, PDO::PARAM_INT);
+			$req = $this->connect->prepare("UPDATE sport_user SET vote = :vote WHERE id_user = :idUser AND id_sport = :idSport");
+			$req->bindParam( ":idUser", $idUser, PDO::PARAM_INT);
+			$req->bindParam( ":idSport", $idSport, PDO::PARAM_INT);
+			$req->bindParam( ":vote", $vote, PDO::PARAM_INT);
 			$req->execute();
 			$retour = true;
 			return $retour;
@@ -77,11 +78,43 @@ class SportUser {
 
 
 
+
 	//RESULTATS DE TOUS LES USERS
 
-	//GET NB VOTE BY ID SPORT
-
 	//GET MOYENNE BY ID SPORT
+	public function getSumVoteBySport($idSport)
+	{
+		try {
+			$req = $this->connect->prepare("SELECT id_user, id_sport, SUM(vote) as vote FROM sport_user WHERE id_sport = :idSport AND vote is not null");
+			$req->bindParam(":idSport", $idSport, PDO::PARAM_INT);
+			$req->setFetchMode(PDO::FETCH_OBJ);
+			$req->execute();
+			while($obj = $req->fetch()){
+				$somme = $obj->vote;
+			}
+
+			return $somme;
+
+		} catch (PDOException $e) {
+			return $e->getMessage();
+		}
+	}
+
+	//GET NB VOTE BY ID SPORT
+	public function getNbVoteBySport($idSport)
+	{
+		try {
+			$req = $this->connect->prepare("SELECT id_user, id_sport, vote FROM sport_user WHERE id_sport = :idSport AND vote is not null");
+			$req->bindParam(":idSport", $idSport, PDO::PARAM_INT);
+			$req->execute();
+
+			$nbAvis = $req->rowCount();
+			return $nbAvis;
+
+		} catch (PDOException $e) {
+			return $e->getMessage();
+		}
+	}
 
 
 

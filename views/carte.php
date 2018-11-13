@@ -1,7 +1,9 @@
-<div class="container p-0">
+<div class="container-fluid bg-beige p-0">
     <div class="row">
         <div class="col-12">
-            <div id="carte" class=" p-relative">
+            <div id="carte" class="p-relative" >
+                <!-- <img src="web/Images/CARTE_FINAL-01.svg"  usemap="#carte-sports" alt="" class='carte'> -->
+
                 <?php foreach($listSport as $sport){
                     $position = explode(',', $sport->getCoordonnees());
                     $sportId = $sport->getId();
@@ -10,17 +12,20 @@
                     if(!$sportTeste) $img = "web/images/marqueur_fait.svg";
                     else $img = "web/images/marqueur_pas_fait.svg";
                     ?>
-                        <img src="<?php echo $img; ?>" alt=""  data-toggle="modal" data-target="#modal-sport-<?php echo $sportId?>" style="position:absolute; top: <?php echo $position[0]."%"?>; left: <?php echo $position[1]."%"?>; height:45px; width:45px; cursor:pointer; ">
+                        <img src="<?php echo $img; ?>" alt=""  data-toggle="modal" data-target="#modal-sport-<?php echo $sportId?>" style="position:absolute; top: <?php echo $position[0]."%"?>; left: <?php echo $position[1]."%"?>; height:45px; width:45px; cursor:pointer;z-index:103; ">
 
                <?php }?>
                 <img src="web/images/dalle-angevine.png" style="position: absolute; top: 56%; left: 14%; height:65px; width:65px; " alt="">
+
+
             </div>
 
 
             <div class="fixed-bottom">
                 <div class="oblique-carte">
                 </div>
-                <a href="index.php?p=resultat" class="text-white text-decoration-none">
+
+                <a  class="text-white text-decoration-none" data-toggle='modal' data-target="#modal-stop-parcours">
                     <div class="button-bleu text-center">
                         <p class="text-button" style="font-size: 27px;"><strong>Arrêter mon parcours</strong> <img src="web/Images/fleche.svg" alt=""></p>
                     </div>
@@ -60,6 +65,7 @@
                     </div>
                 </div>
             </div>
+            <div class="modal-oblique-bottom"></div>
         </div>
     </div>
 	<?php
@@ -69,18 +75,46 @@ foreach($listSport as $sport){
 ?>
     <div class="modal " tabindex="-1"  id="modal-sport-<?php echo $sportId?>" role="dialog">
         <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
-            <div class="modal-content">
+
+            <div class="modal-content position-relative">
 
                 <div class="modal-body pt-1 bg-dark ">
+
+                    <div class="modal-oblique-center-top"></div>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h5 class="modal-title"><?php echo $sport->getName();?></h5>
+                    <?php getNbVoteBySport($sport->getId());
+                    $nbVote = getNbVoteBySport($sport->getId());
+                    if($nbVote == 0) echo "0 avis";
+                    else{
+                       $moyenne = getMoyBySport($sport->getId());
+                       switch($moyenne){
+                           case 1:
+                                echo "<img src='web/Images/pas_content.svg' alt='' >";
+                           break;
+                           case 2:
+                                echo "<img src='web/Images/pas_content.svg' alt='' >";
+                           break;
+                           case 3:
+                                echo "<img src='web/Images/pas_content.svg' alt='' >";
+                           break;
+                       }
+                    }
+
+
+                    ?>
+                    <!-- afficher moyenne -->
                     <p><?php echo $sport->getDescript()?></p>
+                    <?php
+                        $textTwitter = 'Je+vous+défie+au';
+                        $textTwitter .= str_replace(' ', '+', $sport->getName());
+                    ?>
 
                     <div class="defi">
                         <img src="web/images/defie.svg" alt="" class="mr-3">
-                        <a href="" class="text-white">Défier quelqu'un   <img src="web/images/fleche.svg" alt=""></a>
+                        <a href="https://twitter.com/intent/tweet?text=<?php echo $textTwitter; ?>&hashtags=LaDalleMove,LaDalleAngevine,ToutAngersBouge&ref_src=twsrc%5Etfw" class="text-white">Défier quelqu'un <img src="web/images/fleche.svg" alt=""></a>
                     </div>
                     <div class="oblique-top mx-auto">
                     </div>
@@ -96,10 +130,104 @@ foreach($listSport as $sport){
 
                     <div class="oblique-bottom mx-auto">
                     </div>
+                    <div class="modal-oblique-center-bottom"></div>
                 </div>
             </div>
+
         </div>
     </div>
 <?php }
 
 ?>
+
+<?php
+if(isset($modalAvis) && $modalAvis){ ?>
+<div class="modal " tabindex="-1"  id="modal-sport-avis" role="dialog">
+        <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
+
+            <div class="modal-content position-relative">
+
+                <div class="modal-body pt-1 bg-dark ">
+
+                    <div class="modal-oblique-center-top"></div>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <form action="index.php?p=sendVote&sport=<?php echo $sportId; ?>" method="POST">
+                        <div>
+                            <div class="oblique-top mx-auto"></div>
+                            <a href="" class="btn btn-light text-decoration-none rounded-0" style="width:100px;">
+                                <div class="button-white text-center">
+                                    <p class="text-dark mb-0" ><strong>Valider</strong>
+                                </div>
+                            </a>
+                            <div class="oblique-bottom mx-auto"></div>
+                        </div>
+                    </form>
+                    <!-- afficher moyenne -->
+
+
+
+
+
+                    <div class="modal-oblique-center-bottom"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<?php }
+
+?>
+
+<?php
+if($score < 3) $textStopParcours = "Il faut tester au moins 3 sport avant de pouvoir arrêter ton parcours" ;
+else $textStopParcours = "Tu n'as déjà plus la dalle ? <br>(Tu ne pourra plus revenir en arrière)";
+?>
+ <div class="modal " tabindex="-1"  id="modal-stop-parcours" role="dialog">
+        <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
+
+            <div class="modal-content position-relative">
+
+                <div class="modal-body pt-1 bg-dark ">
+
+                    <div class="modal-oblique-center-top"></div>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="pt-4"><?php echo $textStopParcours; ?></p>
+                    <?php if($score > 2) { ?>
+
+
+                    <div class='d-flex justify-content-between'>
+                        <div>
+                            <div class="oblique-top mx-auto"></div>
+                            <a href="index.php?p=resultat" class="btn btn-light text-decoration-none rounded-0" style="width:100px;">
+                                <div class="button-white text-center">
+                                    <p class="text-dark mb-0" ><strong>Oui</strong>
+                                </div>
+                            </a>
+                            <div class="oblique-bottom mx-auto"></div>
+                        </div>
+                        <div>
+                            <div class="oblique-top mx-auto"></div>
+                            <a class="btn btn-light text-decoration-none rounded-0" data-dismiss="modal" style="width:100px;">
+                                <div class="button-white text-center">
+                                    <p class="text-dark mb-0" ><strong>Non</strong>
+
+                                </div>
+                            </a>
+                            <div class="oblique-bottom mx-auto"></div>
+                        </div>
+                    </div>
+                    <?php
+                     } ?>
+                    <div class="modal-oblique-center-bottom"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>

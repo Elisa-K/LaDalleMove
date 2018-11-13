@@ -54,6 +54,10 @@ body {
     overflow-y: hidden;
 }
 
+.h-100{
+    height: 100%;
+}
+
 .accueil-header{
     display: flex;
     flex-direction: column;
@@ -95,9 +99,15 @@ input[name='sex'] {
     outline: none;
 }
 
+input[type="radio"]+label{
+    /* border: solid black; */
+    transition: all 0.2s ease-in-out;
 
+}
 input[type="radio"]:checked+label{
-    border: solid black;
+    /* border: solid black; */
+    transform: scale(1.2);
+
 }
 
 .button-orange {
@@ -133,7 +143,6 @@ input[type="radio"]:checked+label{
 }
 .button-black-resultat {
     background-color: #000000;
-    height: 182px;
 }
 .button-black-resultat h3{
     font-family: "Circe Bold" !important;
@@ -204,7 +213,7 @@ div.oblique-resultat-classement {
 
 
 h1.TitreLaDalleMove {
-    font-size: 50px;
+    font-size: 37px;
 }
 
 p.TexteDescriptifAccueil {
@@ -255,6 +264,9 @@ a:hover{
     text-decoration: none !important;
 }
 
+.bg-beige{
+    background-color: #f9f9ef;
+}
 #carte{
     height: 100vh;
     background-image: url("../images/CARTE_FINAL-01.svg");
@@ -262,8 +274,14 @@ a:hover{
     background-position:center center;
     background-size: 92vh 100vh;
     background-position-y: -47px;
+    max-width: 600px;
+
+    margin: auto;
 }
 
+#carte img{
+    display:block;
+}
 .modal{
     font-family: "Circe" !important;
 }
@@ -280,7 +298,9 @@ a:hover{
     font-size: 20px;
     font-family: "Circe Bold" !important;
 }
-
+#modal-help-carte .modal-dialog{
+    max-width: 100% !important;
+}
 #modal-help-carte a{
     width: 125px;
 }
@@ -309,8 +329,11 @@ a:hover{
     width: 155px;
 }
 
+#modal-stop-parcours .oblique-top, #modal-stop-parcours .oblique-bottom{
+    width: 100px;
+}
+
 .dialog-sport .modal-content{
-    width: 85%;
     margin: auto;
 }
 .dialog-sport a img {
@@ -333,4 +356,45 @@ a:hover{
 
 input[type="radio"]{
     visibility:hidden;
+}
+
+
+.bg-dark{
+    background-color: #000 !important;
+}
+
+.modal-oblique-bottom{
+
+    background: linear-gradient(to right bottom, #000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 10px;
+
+}
+.modal-oblique-center-bottom{
+    position: absolute;
+    bottom:-10px;
+    background: linear-gradient(to right bottom, #000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 10px;
+     width: 100%;
+     left: 0;
+}
+
+.modal-oblique-center-top{
+    position: absolute;
+    top:-10px;
+    background: linear-gradient(to left top, #000 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
+    height: 10px;
+    width: 100%;
+    left: 0;
+
+}
+
+
+.modal-content{
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.notClick{
+    pointer-events: none;
+    cursor: default;
 }
