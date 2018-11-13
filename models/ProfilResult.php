@@ -7,6 +7,7 @@ class ProfilResult {
 	protected $descript;
 	protected $scoreMin;
 	protected $scoreMax;
+	protected $genre;
 
 	public function __construct()
 	{
@@ -14,10 +15,11 @@ class ProfilResult {
 		$this->connect = $db->getDbh();
 	}
 
-	public function getProfilResult($score){
+	public function getProfilResult($score, $genre){
 		try{
-			$req = $this->connect->prepare("SELECT id, name, descript FROM profil_result WHERE :score >= score_min AND :score <= score_max");
+			$req = $this->connect->prepare("SELECT id, name, descript, genre FROM profil_result WHERE :score >= score_min AND :score <= score_max AND genre = :genre");
 			$req->bindParam( ":score", $score, PDO::PARAM_INT);
+			$req->bindParam( ":genre", $genre, PDO::PARAM_STR);
 			$req->execute();
 			$req->setFetchMode( PDO::FETCH_OBJ);
 			$obj = $req->fetch();
@@ -28,6 +30,7 @@ class ProfilResult {
 				$profilResult->setId($obj->id);
 				$profilResult->setName($obj->name);
 				$profilResult->setDescript($obj->descript);
+				$profilResult->setGenre($obj->genre);
 
 				return $profilResult;
 			}
@@ -109,4 +112,24 @@ class ProfilResult {
 
 
 
+
+	/**
+	 * Get the value of genre
+	 */
+	public function getGenre()
+	{
+		return $this->genre;
+	}
+
+	/**
+	 * Set the value of genre
+	 *
+	 * @return  self
+	 */
+	public function setGenre($genre)
+	{
+		$this->genre = $genre;
+
+		return $this;
+	}
 }

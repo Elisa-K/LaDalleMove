@@ -4,7 +4,7 @@ include_once('./models/Avatar.php');
 
 function getAvatarById($idAvatar){
 	$avatar = new Avatar();
-	$avatarImg = $avatar->getAvatarById( $idAvatar);
+	$avatarImg = $avatar->getAvatarById($idAvatar);
 	return $avatarImg;
 }
 

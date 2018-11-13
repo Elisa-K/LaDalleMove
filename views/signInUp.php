@@ -1,11 +1,11 @@
-<div class="container-fluid bg-bleu">
+<div class="container-fluid bg-bleu h-100">
     <div class="row">
         <div class="col-12 p-0">
 
             <img src="web/Images/DalleAngevineLogo.png" alt=""
-                 style="width: 50%;" class="mx-auto d-block">
+                 style="max-width: 150px;" class="mx-auto d-block img-fluid">
 
-            <div class="mt-3">
+            <div class="mt-3 mb-3">
                 <div class="oblique-signup-connection">
                 </div>
                 <a href="index.php?p=connexion" class="">
@@ -24,8 +24,8 @@
                 </div>
             </div>
 
-            <div class="mt-3">
-                <img  class='animated fadeInLeft delay-0s' src="web/Images/illustration_inscription.svg" alt="">
+            <div class="mt-4 text-center">
+                <img  class='animated fadeInLeft delay-0s' src="web/Images/illustration_inscription.svg" alt="" class='img-fluid' style='max-height: 400px;'>
             </div>
         </div>
     </div>

@@ -26,6 +26,7 @@ switch($page){
 	break;
 	case 'signIn':
 		$retour = addUser();
+		$listAvatar = getAllAvatar();
 		if(!$retour) $vue = 'views/inscription.php';
 		else {
 			$vue = 'views/ecran.php';
@@ -39,10 +40,20 @@ switch($page){
 		if(empty($retour)){
 			$vue = 'views/connexion.php';
 		}else{
-			$listSport = getAllSport();
-			$_SESSION["id"] = $retour->getId();
-			$score = getScore();
-			$vue = 'views/carte.php';
+			if($retour->getStopDay() == 1){
+				$_SESSION["id"] = $retour->getId();
+				$score = getScore();
+				$user = getUserById();
+				$avatar = getAvatarById($user->getIdAvatar());
+				$profil = getProfilScore($score, $avatar->getGenre());
+				$vue = 'views/resultat.php';
+			}else{
+				$listSport = getAllSport();
+				$_SESSION["id"] = $retour->getId();
+				$score = getScore();
+				$vue = 'views/carte.php';
+			}
+
 		}
 	break;
 	case 'ecran':
@@ -57,13 +68,16 @@ switch($page){
 		$retour = sportTeste($_GET['sportId']);
 		$listSport = getAllSport();
 		$modalHelp = false;
+		$modalAvis = true;
+		$sportId = $_GET['sportId'];
 		$score = getScore();
 		$vue = 'views/carte.php';
 		break;
 	case 'resultat':
 		$score = getScore();
-		$profil = getProfilScore($score);
 		$user = getUserById();
+		$avatar = getAvatarById($user->getIdAvatar());
+		$profil = getProfilScore($score, $avatar->getGenre());
 		$vue = 'views/resultat.php';
 		break;
 	default:

@@ -6,7 +6,7 @@
                 <div class="oblique-ecran-hashtag">
                 </div>
                     <div class="button-black text-center">
-                        <p class="texte-blanc">#LaDalleMoove <br>
+                        <p class="texte-blanc">#LaDalleMove<br>
                         #LaDalleAngevine <br>
                         #ToutAngersBouge</p>
                     </div>
