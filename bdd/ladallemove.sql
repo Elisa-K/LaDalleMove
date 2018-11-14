@@ -158,10 +158,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `pseudo`, `stopDay`, `id_avatar`, `password`) VALUES
-(6, 'testPseudo', 1, 1, '$2y$11$jwy7GiaEhqtbsUB5qskXouU3Fw8Udko4tcTWu1UU2gTDgCFXFbWke'),
-(7, 'Hyblab', 0, 2, '$2y$11$rv3npM7r917NsWDoNw1cNuIJumJWYsejOgYXo6BaUew2zl.b27Inu'),
-(8, 'hyblab2', 1, 2, '$2y$11$ZWK.ZGa9FxRVJoX.EkPUzeAs64TRIAtKJwbp6lqzs6rROczigKdZK'),
-(9, 'hyblab3', 1, 2, '$2y$11$1NqJEPcud/HAEvKI4cEyT.AiCJjbusiXsXJZG1RMi6DmVUN.aTJam');
+(6, 'Christopher', 1, 2, '$2y$11$jwy7GiaEhqtbsUB5qskXouU3Fw8Udko4tcTWu1UU2gTDgCFXFbWke'),
+(7, 'Romain', 0, 2, '$2y$11$rv3npM7r917NsWDoNw1cNuIJumJWYsejOgYXo6BaUew2zl.b27Inu'),
+(8, 'Mathilde', 1, 1, '$2y$11$ZWK.ZGa9FxRVJoX.EkPUzeAs64TRIAtKJwbp6lqzs6rROczigKdZK'),
+(9, 'Elisa', 1, 1, '$2y$11$1NqJEPcud/HAEvKI4cEyT.AiCJjbusiXsXJZG1RMi6DmVUN.aTJam');
 
 --
 -- Index pour les tables déchargées
