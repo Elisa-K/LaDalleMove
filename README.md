@@ -7,7 +7,7 @@ Dans le cadre de la deuxième édition angevine du Hyblab qui s'est tenu le 7, 8
 **Tout Angers bouge**, situé en plein centre-ville d'Angers, est une manifestation sportive où est réuni plus de cents clubs et associations pour animer via des stands, initiations et démontrations.
 
 
-Ce projet a été réalisé par 2 étudiants de l'école **EEGP** pour le design, 2 étudiants de l'**UCO** pour la rédaction et du pitch de présentation, et de 3 étudiants de l'**IMIE** pour le développement de l'application.Et accompagné de Charles Dubré, porteur du projet, qui est responsable éditorial du site de **La Dalle Angevine**
+Ce projet a été réalisé par 2 étudiants de l'école **EEGP** pour le design, 2 étudiants de l'**UCO** pour la rédaction du contenu, et de 3 étudiants de l'**IMIE** pour le développement de l'application. Et accompagné de Charles Dubré, porteur du projet, qui est responsable éditorial du site de **La Dalle Angevine**
 
 * [HybLab](https://www.hyblab.fr/)
 * [Tout Angers Bouge](http://www.angers-trails.fr/)
@@ -25,7 +25,7 @@ Découvrir de nouvelles disciplines et se tester sur des sports.
 ## Pré-requis
 
 ```
-Version PHP : 7.1
+Version minimum PHP : 7.1
 ```
 
 ## Installation
@@ -42,7 +42,9 @@ Importez le fichier situé dans le dossier **bdd** - ladallemove.sql dans votre 
 
 ### Configuration de la base de données au projet
 
-Dans le dossier **models**, se site le fichier *BddConnect.php*. Dans se fichier, renseignez les informations nécessaires pour connecter la base de données *laDalleMove* avec le projet.
+Dans le dossier **models**, vous trouverez le fichier *BddConnect.php* (fichier de configuration de la base de données).
+
+Renseignez les informations nécessaires dans ce fichier pour connecter la base de données *laDalleMove* avec le projet :
 
 ```
 	private $host = "localhost"; //serveur
