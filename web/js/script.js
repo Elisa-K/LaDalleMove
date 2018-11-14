@@ -8,4 +8,4 @@ $(document).ready(function(){
     if ($('#modal-sport-avis').length > 0)
         $('#modal-sport-avis').modal('show');
 
-})
+});

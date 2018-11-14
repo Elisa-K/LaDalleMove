@@ -3,10 +3,10 @@ class BddConnect
 {
 	private static $instance;
 	private $type = "mysql";
-	private $host = "localhost";
-	private $dbname = "ladallemove";
-	private $username = "root";
-	private $password = 'root';
+	private $host = "localhost"; // serveur
+	private $dbname = "ladallemove"; //nom de la base de données
+	private $username = "root"; //identifiant
+	private $password = ''; // mot de passe
 	private $dbh;
 	private function __construct()
 	{

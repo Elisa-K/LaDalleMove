@@ -3,7 +3,7 @@
         <div class="col-12 p-0">
 
             <img src="web/Images/DalleAngevineLogo.png" alt=""
-                 style="max-width: 150px;" class="mx-auto d-block img-fluid mb-2 mt-4">
+                 style="height: 125px;" class="mx-auto d-block img-fluid mb-2 mt-4 img-signInUp">
 
             <div class="mt-4 mb-3">
                 <div class="oblique-signup-connection">
@@ -25,7 +25,7 @@
             </div>
 
             <div class="mt-4 text-center">
-                <img  class='animated fadeInLeft delay-0s' src="web/Images/illustration_inscription.svg" alt="" class='img-fluid' style='max-height: 400px;'>
+                <img  class='animated fadeInLeft delay-0s img-fluid img-signInUp2' src="web/Images/illustration_inscription.svg" alt="">
             </div>
         </div>
     </div>

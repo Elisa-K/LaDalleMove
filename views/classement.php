@@ -1,9 +1,9 @@
 <div class="container-fluid h-100 bg-orange">
-    <div class="row">
-        <div class="col-12 p-0 text-center text-white">
-            <img src="web/Images/classement.svg" class='pt-3' alt="" style="height: 85px;">
+    <div class="row h-100">
+        <div class="col-12 h-100 p-0 text-center text-white">
+            <img src="web/Images/classement.svg" class='pt-3' alt="" style="height: 75px;">
             <h2 class='font-weight-bold' style='margin-top: -10px;'>Classement</h2>
-            <div style='overflow-y: auto !important;display:block; max-height:70vh;'>
+            <div style='overflow-y: auto !important;display:block; max-height:65%;'>
             <table class='table table-bordered table-striped'>
                 <thead>
                     <tr>

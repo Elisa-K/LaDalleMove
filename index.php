@@ -52,7 +52,7 @@ switch($page){
 			}else{
 				$listSport = getAllSport();
 				$score = getScore();
-				$modalHelp = false;
+				$modalHelp = true;
 				$vue = 'views/carte.php';
 			}
 

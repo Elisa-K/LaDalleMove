@@ -1,20 +1,20 @@
-<div class="container-fluid pt-4 bg-rouge">
-    <div class="row">
-        <div class="col-12">
-            <div class="text-center" style="height:100vh;">
-                <img src="web/Images/illistration_page_connexion.svg" alt="" class='animated fadeInLeft delay-0s mb-4 img-fluid' style='max-height: 300px;'>
+<div class="container-fluid h-100 pt-4 bg-rouge">
+    <div class="row h-100">
+        <div class="col-12 h-100">
+            <div class="text-center h-100" >
+                <img src="web/Images/illistration_page_connexion.svg" alt="" class='animated fadeInLeft delay-0s mb-4 img-fluid img-connexion'>
                 <h1 class="text-center mb-4" style="color: white"><strong>Connexion</strong></h1>
                 <form action="index.php?p=signUp" method="POST">
 		            <?php if(isset($retour) && !$retour){ ?>
-                        <div class="alert alert-danger" role="alert" style='font-size: 0.8rem;'>
+                        <div class="alert alert-danger p-1" role="alert" style='font-size: 0.6rem;'>
                             Pseudo et/ou mot de passe invalide(s)
                         </div>
 		            <?php } ?>
                     <div class="form-group text-center">
                         <label for="" style="color: white">Pseudo de Dalleux</label>
-                        <input type="text" class="form-control mb-3 mx-auto" name="pseudo" style="max-width: 300px;" required>
+                        <input type="text" class="form-control mb-3 mx-auto form-control-sm" name="pseudo" style="max-width: 300px;" required>
                         <label for="" style="color: white">Mot de passe</label>
-                        <input type="password" class="form-control mb-3 mx-auto" name="password" style="max-width: 300px;" required>
+                        <input type="password" class="form-control mb-3 mx-auto form-control-sm" name="password" style="max-width: 300px;" required>
                     </div>
                     <div class="fixed-bottom">
                         <div class="oblique-connexion">

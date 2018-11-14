@@ -1,6 +1,6 @@
-<div class="container-fluid bg-beige p-0">
-    <div class="row">
-        <div class="col-12">
+<div class="container-fluid h-100 bg-beige p-0">
+    <div class="row h-100">
+        <div class="col-12 h-100">
             <div id="carte" class="p-relative" >
                 <!-- <img src="web/Images/CARTE_FINAL-01.svg"  usemap="#carte-sports" alt="" class='carte'> -->
 
@@ -25,9 +25,9 @@
                 <div class="oblique-carte">
                 </div>
 
-                <a  class="text-white text-decoration-none" data-toggle='modal' data-target="#modal-stop-parcours">
+                <a class="text-white text-decoration-none" data-toggle='modal' data-target="#modal-stop-parcours" style="cursor:pointer;">
                     <div class="button-bleu text-center">
-                        <p class="text-button" style="font-size: 27px;"><strong>Arrêter mon parcours</strong> <img src="web/Images/fleche.svg" alt=""></p>
+                        <p class="text-button" style="font-size: 23px;"><strong>Arrêter mon parcours</strong> </p><img src="web/Images/fleche.svg" class='mb-1' alt="">
                     </div>
                 </a>
             </div>
@@ -73,7 +73,7 @@
 foreach($listSport as $sport){
 	$sportId = $sport->getId();
 ?>
-    <div class="modal " tabindex="-1"  id="modal-sport-<?php echo $sportId?>" role="dialog">
+    <div class="modal h-100" tabindex="-1"  id="modal-sport-<?php echo $sportId?>" role="dialog">
         <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
 
             <div class="modal-content position-relative">
@@ -112,7 +112,7 @@ foreach($listSport as $sport){
                         $sportTeste = $sportUser->getSportUser($_SESSION['id'], $sportId);
                         //Si le sport a été testé on affiche un message
 
-                        $textTwitter = 'Je+vous+défie+au';
+                        $textTwitter = 'Je+vous+défie+au+';
                         $textTwitter .= str_replace(' ', '+', $sport->getName());
                     ?>
 
@@ -154,7 +154,7 @@ foreach($listSport as $sport){
 
 <?php
 if(isset($modalAvis) && $modalAvis){ ?>
-<div class="modal " tabindex="-1"  id="modal-sport-avis" role="dialog">
+<div class="modal h-100" tabindex="-1"  id="modal-sport-avis" role="dialog">
         <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
 
             <div class="modal-content position-relative">
@@ -206,9 +206,9 @@ if(isset($modalAvis) && $modalAvis){ ?>
 
 <?php
 if($score < 3) $textStopParcours = "Il faut tester au moins 3 sport avant de pouvoir arrêter ton parcours" ;
-else $textStopParcours = "Tu n'as déjà plus la dalle ? <br>(Tu ne pourra plus revenir en arrière)";
+else $textStopParcours = "Tu n'as déjà plus la dalle ? <br>(Tu ne pourras plus revenir en arrière)";
 ?>
- <div class="modal " tabindex="-1"  id="modal-stop-parcours" role="dialog">
+ <div class="modal h-100" tabindex="-1"  id="modal-stop-parcours" role="dialog">
         <div class="modal-dialog dialog-sport modal-dialog-centered  text-white text-center" role="document">
 
             <div class="modal-content position-relative">

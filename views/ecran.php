@@ -1,7 +1,7 @@
-<div class="container-fluid bg-orange">
-	<div class="row">
-        <div class="col-12 p-0 d-flex"  style="height:100vh;">
-            <div class='my-auto w-100'>
+<div class="container-fluid h-100 bg-orange">
+	<div class="row h-100">
+        <div class="col-12 h-100 p-0 d-flex"  style="height:100vh;">
+            <div class='my-auto w-100 pb-4'>
                 <p class="text-center mt-3 texte-blanc">Pour partager tes réactions, tes photos et défier tes amis utilise les</p>
                 <div>
                     <div class="oblique-ecran-hashtag">
@@ -15,8 +15,8 @@
                     </div>
                 </div>
 
-                <img src="web/Images/twitter.png" alt="" class="text-center mx-auto d-block mt-3 img-fluid" style='max-height: 150px' >
-                <p class="text-center mt-3 texte-blanc">Ils s'afficheront sur l'écran géant situé sur l'esplanade du Quai.</p>
+                <img src="web/Images/twitter.png" alt="" class="text-center mx-auto d-block mt-3 img-fluid img-ecran" >
+                <p class="text-center mt-3 px-1 texte-blanc">Ils s'afficheront sur l'écran géant situé sur l'esplanade du Quai.</p>
             </div>
         </div>
 	</div>

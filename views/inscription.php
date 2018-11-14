@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-12"  style="height:100vh;">
 
-            <p class="text-center texte-blanc mt-3">Avant de te lancer et en guise d’échauffement,</p>
-            <p class="text-center texte-blanc mb-1" style="font-size: 23px;"><strong>Choisis un avatar</strong></p>
+            <p class="text-center texte-blanc mt-3 mb-1">Avant de te lancer et en guise d’échauffement,</p>
+            <p class="text-center texte-blanc mb-1" style="font-size: 20px;"><strong>Choisis un avatar</strong></p>
 
             <form action="index.php?p=signIn" method="post" class='text-center'>
                 <?php foreach($listAvatar as $avatar){?>
@@ -14,14 +14,14 @@
                 <?php } ?>
                 <div class="form-group text-center text-white px-4">
                     <?php if(isset($retour)){ ?>
-                       <div class="alert alert-danger" role="alert" style='font-size: 0.8rem;'>
+                       <div class="alert alert-danger p-1" role="alert" style='font-size: 0.6rem;'>
                             Pseudo déjà utilisé
                         </div>
                     <?php }?>
                     <label for="pseudo">Pseudo de Dalleux</label>
-                    <input type="text" class="form-control mb-3 mx-auto" style="max-width: 300px;" name="pseudo" required>
+                    <input type="text" class="form-control mb-3 mx-auto form-control-sm" style="max-width: 300px;" name="pseudo" required>
                     <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control mb-3 mx-auto" style="max-width: 300px;" name="password" required>
+                    <input type="password" class="form-control mb-3 mx-auto form-control-sm" style="max-width: 300px;" name="password" required>
                 </div>
                 <div class="fixed-bottom">
                     <div class="oblique-accueil">
