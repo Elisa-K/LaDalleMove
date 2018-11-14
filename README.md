@@ -1,26 +1,26 @@
-# La Dalle Move
+# #La Dalle Move
 
 Dans le cadre de la deuxième édition angevine du Hyblab qui s'est tenu le 7, 8 et 9 novembre 2018, nous devions imaginer une expérience innovante à travers une web-app pour les sportifs et visitieurs de l'évènement Tout Angers Bouge.
 
-**La Dalle Angevine**, porteur du projet, est une association qui a pour objectif de valoriser et de fédérer les acteurs du sport à Angers.
+**#La Dalle Angevine**, porteur du projet, est une association qui a pour objectif de valoriser et de fédérer les acteurs du sport à Angers.
 
-**Tout Angers bouge**, situé en plein centre-ville d'Angers, est une manifestation sportive où est réuni plus de cents clubs et associations pour animer via des stands, initiations et démontrations.
+**Tout Angers bouge**, située en plein centre-ville d'Angers, est une manifestation sportive où est réuni plus de cent clubs et associations.
 
 
-Ce projet a été réalisé par 2 étudiants de l'école **EEGP** pour le design, 2 étudiants de l'**UCO** pour la rédaction du contenu, et de 3 étudiants de l'**IMIE** pour le développement de l'application. Et accompagné de Charles Dubré, porteur du projet, qui est responsable éditorial du site de **La Dalle Angevine**
+Ce projet a été réalisé par 2 étudiants de l'école **EEGP** pour le design, 2 étudiants de l'**UCO** pour la rédaction du contenu, et de 3 étudiants de l'**IMIE** pour le développement de l'application. Le porteur de projet Charles Dubré, responsable éditorial du site **#LaDalleAngevine**, a accompagné les étudiants tout au long du HybLab.
 
 * [HybLab](https://www.hyblab.fr/)
 * [Tout Angers Bouge](http://www.angers-trails.fr/)
-* [La Dalle Angevine](https://ladalleangevine.com/)
+* [#La Dalle Angevine](https://ladalleangevine.com/)
 
 ### La problématique
-Comment permettre aux participants de “Tout Angers bouge” de vivre cette journée différemment et de découvrir de nouveaux sports ?
+Proposer au public de nouvelles expériences numériques autour de **Tout Angers Bouge** avec l'association **#LaDalleAngevine**, qui souhaite être plus active et encourager le public à tester et découvrir des sports sur l'événement.
 
 ### La piste retenue
-Proposer un parcours interactif pour découvrir 15 sports méconnus avec un système de points et découvrir son profil de “dalleu”, en fonction du nombre de sports testés.
+Proposer un parcours interactif où les utilisateurs pourront tester 15 sports qu'ils n'ont pas l'habitude de pratiquer, défier leurs amis et gagner des récompenses. A l'issu du parcours ils découvriront quel type de **Dalleux** sommeille en eux.
 
 ### Objectifs
-Découvrir de nouvelles disciplines et se tester sur des sports.
+Défier ses amis, tester et découvrir de nouvelles disciplines !
 
 ## Pré-requis
 
