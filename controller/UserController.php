@@ -33,12 +33,12 @@ function verifLogin(){
 
 function stopParcours(){
 	$user = new User();
-	$retour = $user->setStopDay($_SESSION['id']);
+	$retour = $user->stopDay($_SESSION['id']);
 	return $retour;
 }
 
-function getUserById(){
+function getUserById($idUser){
 	$user = new User();
-	$userLogin = $user->getUserById($_SESSION['id']);
+	$userLogin = $user->getUserById($idUser);
 	return $userLogin;
 }

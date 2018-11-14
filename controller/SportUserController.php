@@ -12,7 +12,7 @@ function sportTeste($sportId){
 
 function getScore(){
 	$sportUser = new SportUser();
-	$score = $sportUser->getScore( $_SESSION['id']);
+	$score = $sportUser->getScoreByUser( $_SESSION['id']);
 	return $score;
 }
 
@@ -45,13 +45,14 @@ function getMoyBySport($idSport){
 
 }
 
-
-//send vote
-
 function sendVote($idSport){
 	$sportUser = new sportUser;
 	$retour = $sportUser->sendVoteSport($_SESSION['id'], $idSport, $_POST['vote']);
 	return $retour;
 }
 
-// get score
+function getClassement(){
+	$sportUser = new SportUser();
+	$classement = $sportUser->getClassement();
+	return $classement;
+}

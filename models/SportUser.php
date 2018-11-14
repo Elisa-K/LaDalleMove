@@ -5,6 +5,7 @@ class SportUser {
 	protected $idSport;
 	protected $idUser;
 	protected $vote;
+	protected $score;
 
 
 	public function __construct()
@@ -44,7 +45,7 @@ class SportUser {
 		}
 	}
 //COMPTER SCORE PAR USER
-	public function getScore($idUser){
+	public function getScoreByUser($idUser){
 		try{
 			$req = $this->connect->prepare("SELECT id_user, id_sport FROM sport_user WHERE id_user = :idUser");
 			$req->bindParam( ":idUser",$idUser, PDO::PARAM_INT);
@@ -72,11 +73,30 @@ class SportUser {
 			$retour = true;
 			return $retour;
 		}catch (PDOException $e){
-			return null;
+			return $e->getMessage();;
 		}
 	}
 
+	public function getClassement()
+	{
+		try {
+			$req = $this->connect->prepare("SELECT id_user, COUNT(id_sport) as score FROM sport_user LEFT JOIN user ON user.id = sport_user.id_user WHERE user.stopDay = 1 GROUP BY id_user ORDER BY score desc");
+			$req->setFetchMode(PDO::FETCH_OBJ);
+			$req->execute();
+			$classement = array();
+			while ($obj = $req->fetch()) {
+				$sportUser = new SportUser();
+				$sportUser->setIdUser($obj->id_user);
+				$sportUser->setScore($obj->score);
+				$classement[] = $sportUser;
+			}
 
+			return $classement;
+
+		} catch (PDOException $e) {
+			return $e->getMessage();
+		}
+	}
 
 
 	//RESULTATS DE TOUS LES USERS
@@ -161,4 +181,24 @@ class SportUser {
 	}
 
 
+
+	/**
+	 * Get the value of score
+	 */
+	public function getScore()
+	{
+		return $this->score;
+	}
+
+	/**
+	 * Set the value of score
+	 *
+	 * @return  self
+	 */
+	public function setScore($score)
+	{
+		$this->score = $score;
+
+		return $this;
+	}
 }

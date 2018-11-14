@@ -20,8 +20,8 @@ class ProfilResult {
 			$req = $this->connect->prepare("SELECT id, name, descript, genre FROM profil_result WHERE :score >= score_min AND :score <= score_max AND genre = :genre");
 			$req->bindParam( ":score", $score, PDO::PARAM_INT);
 			$req->bindParam( ":genre", $genre, PDO::PARAM_STR);
+			$req->setFetchMode(PDO::FETCH_OBJ);
 			$req->execute();
-			$req->setFetchMode( PDO::FETCH_OBJ);
 			$obj = $req->fetch();
 			if(empty($obj)){
 				return null;

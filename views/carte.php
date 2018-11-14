@@ -84,38 +84,46 @@ foreach($listSport as $sport){
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title"><?php echo $sport->getName();?></h5>
+                    <h6 class="modal-title pt-3"><?php echo $sport->getName();?></h6>
                     <?php getNbVoteBySport($sport->getId());
                     $nbVote = getNbVoteBySport($sport->getId());
-                    if($nbVote == 0) echo "0 avis";
+                    if($nbVote == 0) echo "<small>(0 avis)</small>";
                     else{
                        $moyenne = getMoyBySport($sport->getId());
                        switch($moyenne){
                            case 1:
-                                echo "<img src='web/Images/pas_content.svg' alt='' >";
+                                echo "<img src='web/Images/pas_content.svg' alt='' style='height:30px'>";
                            break;
                            case 2:
-                                echo "<img src='web/Images/pas_content.svg' alt='' >";
+                                echo "<img src='web/Images/sourire.svg' alt='' style='height:30px'>";
                            break;
                            case 3:
-                                echo "<img src='web/Images/pas_content.svg' alt='' >";
+                                echo "<img src='web/Images/coeur.svg' alt='' style='height:30px'>";
                            break;
                        }
+                       echo "<small class='pl-2'>($nbVote avis)</small>";
                     }
 
 
                     ?>
                     <!-- afficher moyenne -->
-                    <p><?php echo $sport->getDescript()?></p>
+                    <p class='pt-1'><?php echo $sport->getDescript()?></p>
                     <?php
+                        $sportTeste = $sportUser->getSportUser($_SESSION['id'], $sportId);
+                        //Si le sport a été testé on affiche un message
+
                         $textTwitter = 'Je+vous+défie+au';
                         $textTwitter .= str_replace(' ', '+', $sport->getName());
                     ?>
 
-                    <div class="defi">
+                    <div class="defi pb-3">
                         <img src="web/images/defie.svg" alt="" class="mr-3">
                         <a href="https://twitter.com/intent/tweet?text=<?php echo $textTwitter; ?>&hashtags=LaDalleMove,LaDalleAngevine,ToutAngersBouge&ref_src=twsrc%5Etfw" class="text-white">Défier quelqu'un <img src="web/images/fleche.svg" alt=""></a>
                     </div>
+                    <?php if($sportTeste){ ?>
+
+
+
                     <div class="oblique-top mx-auto">
                     </div>
 
@@ -127,9 +135,13 @@ foreach($listSport as $sport){
                         </div>
 
                     </a>
-
                     <div class="oblique-bottom mx-auto">
                     </div>
+                    <?php
+                     } ?>
+
+
+
                     <div class="modal-oblique-center-bottom"></div>
                 </div>
             </div>
@@ -154,14 +166,23 @@ if(isset($modalAvis) && $modalAvis){ ?>
                         <span aria-hidden="true">&times;</span>
                     </button>
 
-                    <form action="index.php?p=sendVote&sport=<?php echo $sportId; ?>" method="POST">
+                    <form action="index.php?p=sendVote&sportId=<?php echo $idSport; ?>" method="POST" id="form-avis">
+                        <div class="form-check form-check-inline py-4 mx-auto">
+                            <input type="radio" name="vote" value="1" id="vote-1" required/>
+                            <label for="vote-1"><img src="web/Images/pas_content.svg"  alt="" style="width: 50px;margin-right:15px"></label>
+                            <input type="radio" name="vote" value="2" id="vote-2" required/>
+                            <label for="vote-2"><img src="web/Images/sourire.svg"  alt="" style="width: 50px;margin-right:15px;"></label>
+                            <input type="radio" name="vote" value="3" id="vote-3" required/>
+                            <label for="vote-3"><img src="web/Images/coeur.svg"  alt="" style="width: 50px;"></label>
+                        </div>
                         <div>
                             <div class="oblique-top mx-auto"></div>
-                            <a href="" class="btn btn-light text-decoration-none rounded-0" style="width:100px;">
+                            <input type="submit" class="btn btn-light text-decoration-none rounded-0" style="width:100px;" value='Valider'>
+                            <!-- <a href="" class="btn btn-light text-decoration-none rounded-0" style="width:100px;" onclick="$('#form-avis').submit();">
                                 <div class="button-white text-center">
                                     <p class="text-dark mb-0" ><strong>Valider</strong>
                                 </div>
-                            </a>
+                            </a> -->
                             <div class="oblique-bottom mx-auto"></div>
                         </div>
                     </form>

@@ -23,12 +23,19 @@ html {
     background: linear-gradient(0deg, #00C4FF, #74DBFB);
 }
 
+.bg-bleu-2{
+    background: #00C4FF;
+}
 .bg-orange {
     background: linear-gradient(0deg, #F7A500, #F7C600);
 }
 
 .bg-rouge {
     background: linear-gradient(0deg, #E62042, #FF395B);
+}
+
+.bg-red{
+    background: #E62042;
 }
 
 .btn-submit {
@@ -54,10 +61,15 @@ body {
     overflow-y: hidden;
 }
 
+p{
+    font-size: 1.2rem;
+}
 .h-100{
     height: 100%;
 }
-
+.w-100{
+    width: 100%;
+}
 .accueil-header{
     display: flex;
     flex-direction: column;
@@ -90,7 +102,7 @@ body {
     top: 15px;
 }
 
-input[name='sex'] {
+input[name='sex'], input[name='vote'] {
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
@@ -106,10 +118,13 @@ input[type="radio"]+label{
 }
 input[type="radio"]:checked+label{
     /* border: solid black; */
-    transform: scale(1.2);
+    filter: grayscale(0%);
+    transform: scale(1.3);
 
 }
-
+input[type="radio"]:not(:checked)+label{
+    filter: grayscale(100%);
+}
 .button-orange {
     background-color: #F7A500;
     height: 65px;
@@ -119,7 +134,10 @@ input[type="radio"]:checked+label{
 }
 .button-red {
     background-color: #E62042;
-    height: 80px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button-red-resultat {
@@ -159,7 +177,7 @@ p.text-button-resultat {
 
 div.oblique-accueil {
     background: linear-gradient(to left top, #F7A500 49%, #00C4FF 50%), linear-gradient(-50deg, #00C4FF 16px, #000 0);
-    height: 15px;
+    height: 7px;
 }
 
 div.oblique-connexion{
@@ -209,11 +227,14 @@ div.oblique-resultat-classement {
 }
 
 
-
+div.oblique-classement-resultat {
+    background: linear-gradient(to left top, #46D2FC 49%, transparent 50%), linear-gradient(-50deg, transparent 16px,transparent 0);
+    height: 7px;
+}
 
 
 h1.TitreLaDalleMove {
-    font-size: 37px;
+    font-size: 2rem;
 }
 
 p.TexteDescriptifAccueil {
@@ -227,7 +248,7 @@ p.TexteDescriptifAccueil {
 
 .oblique-carte{
     background: linear-gradient(to left top, #00C4FF 49%, transparent 50%), linear-gradient(-50deg, transparent 16px, transparent 0);
-    height: 15px;
+    height: 7px;
 }
 .button-bleu{
     background-color: #00C4FF;
@@ -291,7 +312,7 @@ a:hover{
 }
 
 .modal-title{
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 #modal-help-carte a p{
@@ -332,6 +353,11 @@ a:hover{
 #modal-stop-parcours .oblique-top, #modal-stop-parcours .oblique-bottom{
     width: 100px;
 }
+
+#modal-sport-avis .oblique-top, #modal-sport-avis .oblique-bottom{
+    width: 100px;
+}
+
 
 .dialog-sport .modal-content{
     margin: auto;
@@ -397,4 +423,11 @@ input[type="radio"]{
 .notClick{
     pointer-events: none;
     cursor: default;
+}
+
+.table-bordered td, .table-bordered th{
+    border: 3px solid #fff !important;
+}
+.table-striped tbody tr:nth-of-type(2n){
+    background-color: #E62042 !important;
 }

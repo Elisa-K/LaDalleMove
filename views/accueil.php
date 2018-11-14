@@ -14,7 +14,7 @@
                 </div>
                 <a href="index.php?p=signInUp" class="text-white text-decoration-none">
                     <div class="button-orange text-center">
-                        <p class="text-button" style="font-size: 37px;"><strong>Jouer</strong> <img src="web/Images/lecture-bouton-icone-triangle.png" alt=""></p>
+                        <p class="text-button" style="font-size: 2rem;"><strong>Jouer</strong> <img src="web/Images/lecture-bouton-icone-triangle.png" alt=""></p>
                     </div>
                 </a>
             </div>

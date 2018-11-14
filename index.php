@@ -16,46 +16,48 @@ session_start();
 switch($page){
 	case 'accueil':;
 		$vue = 'views/accueil.php';
-	break;
+		break;
 	case 'signInUp':
 		$vue = 'views/signInUp.php';
-	break;
+		break;
 	case 'inscription':
 		$listAvatar = getAllAvatar();
 		$vue = 'views/inscription.php';
-	break;
+		break;
 	case 'signIn':
 		$retour = addUser();
 		$listAvatar = getAllAvatar();
 		if(!$retour) $vue = 'views/inscription.php';
 		else {
+			$_SESSION["id"] = $retour;
 			$vue = 'views/ecran.php';
 		}
-	break;
+		break;
 	case 'connexion':
 		$vue = 'views/connexion.php';
-	break;
+		break;
 	case "signUp":
 		$retour = verifLogin();
 		if(empty($retour)){
 			$vue = 'views/connexion.php';
 		}else{
-			if($retour->getStopDay() == 1){
-				$_SESSION["id"] = $retour->getId();
+			$_SESSION["id"] = $retour->getId();
+			$_SESSION['StopParcours'] = $retour->getStopDay();
+			if($_SESSION['StopParcours'] == 1){
 				$score = getScore();
-				$user = getUserById();
+				$user = getUserById($_SESSION["id"]);
 				$avatar = getAvatarById($user->getIdAvatar());
 				$profil = getProfilScore($score, $avatar->getGenre());
 				$vue = 'views/resultat.php';
 			}else{
 				$listSport = getAllSport();
-				$_SESSION["id"] = $retour->getId();
 				$score = getScore();
+				$modalHelp = false;
 				$vue = 'views/carte.php';
 			}
 
 		}
-	break;
+		break;
 	case 'ecran':
 		$vue = 'views/ecran.php';
 		break;
@@ -63,22 +65,36 @@ switch($page){
 		$score = getScore();
 		$listSport = getAllSport();
 		$vue = 'views/carte.php';
-	break;
+		break;
 	case 'sportTeste':
 		$retour = sportTeste($_GET['sportId']);
 		$listSport = getAllSport();
 		$modalHelp = false;
 		$modalAvis = true;
-		$sportId = $_GET['sportId'];
+		$idSport = $_GET['sportId'];
 		$score = getScore();
 		$vue = 'views/carte.php';
 		break;
+	case 'sendVote':
+		$retour = sendVote($_GET['sportId']);
+		$listSport = getAllSport();
+		$modalHelp = false;
+		$modalAvis = false;
+		$sportId = $_GET['sportId'];
+		$score = getScore();
+		$vue = 'views/carte.php';
+	break;
 	case 'resultat':
 		$score = getScore();
-		$user = getUserById();
+		$user = getUserById($_SESSION["id"]);
+		$stopParcours = stopParcours();
 		$avatar = getAvatarById($user->getIdAvatar());
 		$profil = getProfilScore($score, $avatar->getGenre());
 		$vue = 'views/resultat.php';
+		break;
+	case 'classement':
+		$classement = getClassement();
+		$vue = "views/classement.php";
 		break;
 	default:
 		$vue = 'views/accueil.php';

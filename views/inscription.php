@@ -2,19 +2,21 @@
     <div class="row">
         <div class="col-12"  style="height:100vh;">
 
-            <p class="text-center texte-blanc mt-4">Avant de te lancer et en guise d’échauffement,</p>
-            <p class="text-center texte-blanc mb-1" style="font-size: 27px;"><strong>Choisis un avatar</strong></p>
+            <p class="text-center texte-blanc mt-3">Avant de te lancer et en guise d’échauffement,</p>
+            <p class="text-center texte-blanc mb-1" style="font-size: 23px;"><strong>Choisis un avatar</strong></p>
 
             <form action="index.php?p=signIn" method="post" class='text-center'>
                 <?php foreach($listAvatar as $avatar){?>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline my-2">
                         <input type="radio" name="idAvatar" value="<?php echo $avatar->getId(); ?>" id="<?php echo $avatar->getGenre(); ?>" required/>
-                        <label for="<?php echo $avatar->getGenre(); ?>"><img src="<?php echo $avatar->getUrl(); ?>"  alt="" style="width: 120px;"></label>
+                        <label for="<?php echo $avatar->getGenre(); ?>"><img src="<?php echo $avatar->getUrl(); ?>"  alt="" style="width: 110px;"></label>
                     </div>
                 <?php } ?>
                 <div class="form-group text-center text-white px-4">
                     <?php if(isset($retour)){ ?>
-                        <p>Pseudo déjà utilisé</p>
+                       <div class="alert alert-danger" role="alert" style='font-size: 0.8rem;'>
+                            Pseudo déjà utilisé
+                        </div>
                     <?php }?>
                     <label for="pseudo">Pseudo de Dalleux</label>
                     <input type="text" class="form-control mb-3 mx-auto" style="max-width: 300px;" name="pseudo" required>
@@ -25,7 +27,7 @@
                     <div class="oblique-accueil">
                     </div>
                     <div class="button-orange text-center">
-                        <input type="submit" class="btn btl-lg btn-block btn-submit pt-0" value="S'inscrire >" style="color: white; font-size: 37px;">
+                        <input type="submit" class="btn btl-lg btn-block btn-submit pt-0" value="S'inscrire >" style="color: white; font-size: 2rem;">
                     </div>
                 </div>
 <!--                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Valider">-->

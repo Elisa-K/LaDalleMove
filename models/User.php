@@ -85,17 +85,18 @@ class User {
 			$req->bindParam( ":pseudo",$this->pseudo, PDO::PARAM_STR);
 			$options = [
 				'cost' => 11
-
 			];
 			$password = password_hash($this->password, PASSWORD_BCRYPT, $options);
 
 			$req->bindParam(":password", $password, PDO::PARAM_STR);
 			$req->bindParam( ":idAvatar",$this->idAvatar, PDO::PARAM_INT);
 			$req->execute();
-			$retour = true;
+
+			$retour = $this->connect->lastInsertId();
+
 			return $retour;
 		}catch (PDOException $e){
-			return $e->getMessage();
+			return false;
 		}
 	}
 
