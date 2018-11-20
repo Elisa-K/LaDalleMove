@@ -49,6 +49,7 @@ Renseignez les informations nécessaires dans ce fichier pour connecter la base 
 ```
 	private $host = "localhost"; //serveur
 	private $dbname = "ladallemove"; //nom de la base de données
+	private $port = "3306"; // port
 	private $username = "root"; //identifiant
 	private $password = 'root'; //mot de passe
 

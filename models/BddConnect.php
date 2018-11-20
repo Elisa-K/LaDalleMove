@@ -4,6 +4,7 @@ class BddConnect
 	private static $instance;
 	private $type = "mysql";
 	private $host = "localhost"; // serveur
+	private $port = "3306"; // port
 	private $dbname = "ladallemove"; //nom de la base de données
 	private $username = "root"; //identifiant
 	private $password = ''; // mot de passe
@@ -12,7 +13,7 @@ class BddConnect
 	{
 		try{
 			$this->dbh = new PDO(
-				$this->type.':host='.$this->host.';dbname='.$this->dbname,
+				$this->type.':host='.$this->host.';port='.$this->port.';dbname='.$this->dbname,
 				$this->username,
 				$this->password,
 				array(PDO::ATTR_PERSISTENT => true)
